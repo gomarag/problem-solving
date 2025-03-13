@@ -5,8 +5,10 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        for (int num = 1; num <= n; num++) {
-            System.out.println("*".repeat(num));
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
+            sb.append("*");
+            System.out.println(sb);
         }
     }
 }
