@@ -1,18 +1,21 @@
+import java.util.Stack;
+
 class Solution {
     public int[] solution(int[] num_list) {
-        int left = 0;
-        int right = num_list.length - 1;
+        int[] answer = {};
         
-        // left가 rigth 보다 커지면, 종료
-        while (left < right) {
-            int temp = num_list[left];
-            
-            num_list[left] = num_list[right];
-            num_list[right] = temp;
-            
-            left++;
-            right--;
+        Stack<Integer> stk = new Stack<>();
+        // 1,2,3,4,5
+        for (int num : num_list) {
+            // 5,4,3,2,1
+            stk.push(num);
         }
-        return num_list;
+        
+        answer = new int[stk.size()];
+        // Q. 스택 크기 != answer 길이???
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = stk.pop();
+        }
+        return answer;
     }
 }
